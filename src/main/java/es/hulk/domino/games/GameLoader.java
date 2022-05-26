@@ -10,21 +10,18 @@ import lombok.Setter;
 @Getter @Setter
 public class GameLoader {
 
-    private String selectedGame = MainMenu.getGameType();
-
     private GameInterface gameInterface;
-    private static String gameType;
 
     public void load() {
         if (MainMenu.getGameType().equals("INTERNATIONAL")) {
             setGameInterface(new International());
-            gameType = "International";
+            getGameInterface().setup();
         } else if (MainMenu.getGameType().equals("COLOMBIAN")) {
             setGameInterface(new Colombian());
-            gameType = "Colombian";
+            getGameInterface().setup();
         } else if (MainMenu.getGameType().equals("LATIN")) {
             setGameInterface(new Latin());
-            gameType = "LATIN";
+            getGameInterface().setup();
         }
     }
 
