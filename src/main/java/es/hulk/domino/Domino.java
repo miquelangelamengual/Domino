@@ -13,7 +13,7 @@ public class Domino {
         mainMenu = new MainMenu();
         gameLoader = new GameLoader();
 
-        mainMenu.printMenu();
+        mainMenu.selectPlayers();
         gameLoader.load();
     }
 
