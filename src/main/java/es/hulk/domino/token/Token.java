@@ -2,10 +2,9 @@ package es.hulk.domino.token;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.Setter;
 
+@Getter
 @AllArgsConstructor
-@Getter @Setter
 public class Token {
 
     private String name;
