@@ -1,7 +1,9 @@
 package es.hulk.domino.menus;
 
+import es.hulk.domino.board.Board;
 import es.hulk.domino.player.Player;
 import es.hulk.domino.player.PlayerManager;
+import es.hulk.domino.token.Deck;
 import es.hulk.domino.token.Token;
 import es.hulk.domino.utils.ErrorCatching;
 import es.hulk.domino.utils.Text;
@@ -14,6 +16,8 @@ import java.util.Scanner;
 public class MainMenu {
 
     @Getter private static String gameType;
+    @Getter private static Board board;
+
     private int numPlayers;
 
     public void selectPlayers() {
@@ -27,9 +31,8 @@ public class MainMenu {
             Scanner scanner = new Scanner(System.in);
 
             String name = scanner.nextLine();
-            List<Token> cards = new ArrayList<>(7);
 
-            PlayerManager.addPlayer(new Player(name, cards));
+            PlayerManager.addPlayer(new Player(name));
         }
         printRuleSelection();
     }
