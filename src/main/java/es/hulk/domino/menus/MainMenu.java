@@ -17,18 +17,30 @@ public class MainMenu {
     private int numPlayers;
 
     public void selectPlayers() {
-        Text.log(Text.MAX_PLAYERS);
-        numPlayers = ErrorCatching.returnChoseInt(1,5);
-        createPlayers();
+        Text.selectPlayerType();
+        int option = ErrorCatching.returnChoseInt(0,3);
+
+        if (option == 1) {
+            PlayerManager.addPlayer(new Player("CPU", true));
+            numPlayers = 1;
+            createPlayers();
+            return;
+        }
+
+        if (option == 2) {
+            numPlayers = ErrorCatching.returnChoseInt(1,4);
+            createPlayers();
+        }
     }
 
     public void createPlayers() {
         for (int i = 0; i < numPlayers; i++) {
             Scanner scanner = new Scanner(System.in);
 
-            System.out.println("Selecccione el nombre del jogador: ");
+            System.out.print("Selecccione el nombre del jogador: ");
             String name = scanner.nextLine();
-            PlayerManager.addPlayer(new Player(name));
+
+            PlayerManager.addPlayer(new Player(name, false));
         }
         printRuleSelection();
     }
