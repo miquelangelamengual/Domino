@@ -10,7 +10,7 @@ public class Board {
         for (Player player : PlayerManager.getPlayerList()) {
             System.out.println(player.getName() + " deck");
             System.out.println();
-            for (Card card : player.getDeck().getCardList()) {
+            for (Card card : player.getHand()) {
                 System.out.println(card.toString());
             }
             System.out.println();
