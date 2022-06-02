@@ -1,24 +1,43 @@
 package es.hulk.domino.token;
 
+import es.hulk.domino.player.Player;
 import lombok.Getter;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 @Getter
 public class Deck {
 
-    private List<Token> tokenList = new ArrayList<>();
-
+    private final List<Card> cardList = new ArrayList<>();
     public Deck() {
-        this.addToken();
+        this.generate();
+        this.shuffle();
     }
 
-    public void addToken() {
+    public void generate() {
         for (int i = 0; i < 7; i++) {
-            Random random = new Random();
-            tokenList.add(new Token(String.valueOf(random.nextInt(6))));
+            for (int j = 0; j < 7; j++) {
+                    this.cardList.add(new Card(i, j));
+                }
+            }
+        }
+
+
+    // method to shuffle the deck
+    public void shuffle() {
+        for (int i = 0; i < this.cardList.size(); i++) {
+            int randomIndex = (int) (Math.random() * this.cardList.size());
+            Card temp = this.cardList.get(i);
+            this.cardList.set(i, this.cardList.get(randomIndex));
+            this.cardList.set(randomIndex, temp);
+        }
+    }
+
+    public void assignDeck(Player player) {
+        for (int i = 0; i < 7; i++) {
+            player.getDeck().getCardList().add(this.cardList.get(0));
+            this.cardList.remove(0);
         }
     }
 

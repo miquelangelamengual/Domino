@@ -26,8 +26,8 @@ public class MainMenu {
         for (int i = 0; i < numPlayers; i++) {
             Scanner scanner = new Scanner(System.in);
 
+            System.out.println("Selecccione el nombre del jogador: ");
             String name = scanner.nextLine();
-
             PlayerManager.addPlayer(new Player(name));
         }
         printRuleSelection();

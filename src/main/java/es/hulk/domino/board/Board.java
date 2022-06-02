@@ -1,12 +1,20 @@
 package es.hulk.domino.board;
 
-import es.hulk.domino.token.Token;
+import es.hulk.domino.player.Player;
+import es.hulk.domino.player.PlayerManager;
+import es.hulk.domino.token.Card;
 
 public class Board {
 
     public static void printBoard() {
-        Token token = new Token("0");
-        System.out.print(token.toString());
+        for (Player player : PlayerManager.getPlayerList()) {
+            System.out.println(player.getName() + " deck");
+            System.out.println();
+            for (Card card : player.getDeck().getCardList()) {
+                System.out.println(card.toString());
+            }
+            System.out.println();
+        }
     }
 
 }
