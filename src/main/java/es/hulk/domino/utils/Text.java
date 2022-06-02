@@ -5,8 +5,6 @@ import lombok.experimental.UtilityClass;
 @UtilityClass
 public class Text {
 
-    public String MAX_PLAYERS = "Seleccione los jugadores que quieren que juege, tiene que ser de 2 a 4 jugadores ";
-
     public void logNewLine(String str) {
         System.out.println(str);
     }
@@ -53,5 +51,15 @@ public class Text {
         logNewLine("Has ganado!");
         logNewLine("");
         System.exit(404);
+    }
+
+    public void selectPlayerType() {
+        logNewLine("");
+        logNewLine("Quiere jugar contra la computadora?");
+        logNewLine("");
+        logNewLine("1 - Si");
+        logNewLine("2 - No");
+        logNewLine("");
+        log("Seleccione una de las opciones: ");
     }
 }
