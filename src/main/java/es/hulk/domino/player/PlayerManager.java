@@ -5,6 +5,8 @@ import es.hulk.domino.token.Card;
 import lombok.Getter;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 public class PlayerManager {
@@ -14,11 +16,18 @@ public class PlayerManager {
 
     public static void addPlayer(Player player) {
         player.setId(player.getId() + 1);
+        assignHandToPlayer(player);
         playerList.add(player);
     }
 
-    public static Player getWinner() {
-        for (Player player : playerList) if (player.isWinner()) return player;
-        return null;
+    public static void assignHandToPlayer(Player player) {
+        List<Card> hand = new ArrayList<>();
+
+        for (int i = 0; i < 7; i++) {
+            hand.add(deck.getCardList().get(i));
+            deck.getCardList().remove(i);
+        }
+
+        player.setHand(hand);
     }
 }
