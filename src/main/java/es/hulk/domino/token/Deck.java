@@ -18,6 +18,5 @@ public class Deck {
                 this.cardList.add(new Card(i, j));
             }
         }
-        Collections.shuffle(cardList);
     }
 }
