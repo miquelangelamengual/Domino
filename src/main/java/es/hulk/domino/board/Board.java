@@ -14,7 +14,12 @@ public class Board {
                 System.out.println(card.toString());
             }
             System.out.println();
+            System.out.println();
         }
+    }
+
+    public static void addCard() {
+
     }
 
 }
