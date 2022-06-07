@@ -10,7 +10,7 @@ public class SpanishGame implements GameInterface {
 
     @Override
     public void displayGame() {
-        e
+
     }
 
 }
