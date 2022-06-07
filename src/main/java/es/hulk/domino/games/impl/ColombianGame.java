@@ -33,6 +33,7 @@ public class ColombianGame implements GameInterface {
         this.electionMenu();
     }
 
+    @Override
     public void displayGame() {
         for (Player player : PlayerManager.getPlayerList()) {
             System.out.println();

@@ -7,4 +7,9 @@ public class MexicanGame implements GameInterface {
     @Override
     public void electionMenu() {
     }
+
+    @Override
+    public void displayGame() {
+
+    }
 }

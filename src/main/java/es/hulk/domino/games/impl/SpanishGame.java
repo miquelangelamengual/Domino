@@ -8,4 +8,9 @@ public class SpanishGame implements GameInterface {
     public void electionMenu() {
     }
 
+    @Override
+    public void displayGame() {
+        e
+    }
+
 }
