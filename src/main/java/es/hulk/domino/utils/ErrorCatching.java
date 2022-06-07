@@ -1,6 +1,5 @@
 package es.hulk.domino.utils;
 
-import es.hulk.domino.board.Board;
 import lombok.experimental.UtilityClass;
 
 import java.util.Scanner;

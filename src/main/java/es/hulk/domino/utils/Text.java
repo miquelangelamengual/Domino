@@ -1,5 +1,6 @@
 package es.hulk.domino.utils;
 
+import es.hulk.domino.player.Player;
 import lombok.experimental.UtilityClass;
 
 @UtilityClass
@@ -46,9 +47,9 @@ public class Text {
         System.exit(404);
     }
 
-    public void gameWon() {
+    public void gameWon(Player player) {
         logNewLine("");
-        logNewLine("Has ganado!");
+        logNewLine(player.getName() + " Ha ganado el domino!");
         logNewLine("");
         System.exit(404);
     }

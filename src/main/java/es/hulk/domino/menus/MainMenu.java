@@ -1,6 +1,5 @@
 package es.hulk.domino.menus;
 
-import es.hulk.domino.board.Board;
 import es.hulk.domino.player.Player;
 import es.hulk.domino.player.PlayerManager;
 import es.hulk.domino.utils.ErrorCatching;
@@ -12,7 +11,6 @@ import java.util.Scanner;
 public class MainMenu {
 
     @Getter private static String gameType;
-    @Getter private static Board board;
 
     private int numPlayers;
 
@@ -28,6 +26,7 @@ public class MainMenu {
         }
 
         if (option == 2) {
+            System.out.println("Seleccione el numero de jugadores que van a jugar: ");
             numPlayers = ErrorCatching.returnChoseInt(1,4);
             createPlayers();
         }

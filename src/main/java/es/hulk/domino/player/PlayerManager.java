@@ -20,6 +20,15 @@ public class PlayerManager {
         playerList.add(player);
     }
 
+    public static Player getPlayerById(int id) {
+        for (Player player : playerList) {
+            if (player.getId() == id) {
+                return player;
+            }
+        }
+        return null;
+    }
+
     public static void assignHandToPlayer(Player player) {
         List<Card> hand = new ArrayList<>();
         List<Card> shuffledDeck = deck.getCardList();

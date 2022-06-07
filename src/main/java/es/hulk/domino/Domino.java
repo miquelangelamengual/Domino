@@ -16,5 +16,4 @@ public class Domino {
         mainMenu.selectPlayers();
         gameLoader.load();
     }
-
 }
