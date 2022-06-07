@@ -8,6 +8,7 @@ import lombok.Getter;
 
 import java.util.Scanner;
 
+
 public class MainMenu {
 
     @Getter private static String gameType;

@@ -35,23 +35,16 @@ public class ErrorCatching {
         return true;
     }
 
-    public static int returnParseInt(boolean isInGame) {
+    public static int returnParseInt() {
         Scanner scanner = new Scanner(System.in);
         String str = scanner.nextLine();
 
         if (isNumeric(str)) {
             int number = Integer.parseInt(str);
-            if (isInGame) {
-                /*Board board = Buscaminas.getMenu().getBoard();
-                if (number < 0 || number > (board.getColumns() - 1)) {
-                    System.out.println("Error, introduce un numero entre 0 y " + board.getColumns());
-                    return returnParseInt(isInGame);
-                }*/
-            }
             return number;
         }
         System.out.println("Esto no es un numero...");
-        return returnParseInt(isInGame);
+        return returnParseInt();
     }
 }
 

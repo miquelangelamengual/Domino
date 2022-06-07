@@ -63,4 +63,14 @@ public class Text {
         logNewLine("");
         log("Seleccione una de las opciones: ");
     }
+
+    public void printSideSelection(Player player) {
+        logNewLine("");
+        logNewLine("Player " + player.getName() + " choose a side");
+        logNewLine("");
+        logNewLine("1 - Al Principio");
+        logNewLine("2 - Al Final");
+        logNewLine("");
+        log("Seleccione una de las opciones disponibles: ");
+    }
 }
