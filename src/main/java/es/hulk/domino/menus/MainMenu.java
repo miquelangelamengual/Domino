@@ -27,7 +27,7 @@ public class MainMenu {
             Text.selectPlayerName();
             String name = scanner.nextLine();
 
-            PlayerManager.addPlayer(new Player(name, false));
+            PlayerManager.addPlayer(new Player(name));
         }
         printRuleSelection();
     }
@@ -37,7 +37,7 @@ public class MainMenu {
         Text.printMainMenu();
         int option = ErrorCatching.returnChoseInt(0, 3);
         switch (option) {
-            case 1 -> gameType = "SPANISH";
+            case 1 -> gameType = "INTERNATIONAL";
             case 2 -> gameType = "COLOMBIAN";
             case 3 -> gameType = "MEXICAN";
             default -> printRuleSelection();

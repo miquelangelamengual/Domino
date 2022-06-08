@@ -14,10 +14,8 @@ public class Player {
     private List<Card> hand;
 
     private boolean isWinner;
-    private boolean isCPU;
 
-    public Player(String name, boolean isCPU) {
+    public Player(String name) {
         this.name = name;
-        this.isCPU = isCPU;
     }
 }

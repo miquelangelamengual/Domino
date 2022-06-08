@@ -18,7 +18,7 @@ public class Text {
         logNewLine("");
         logNewLine(CC.RESET + "Trii amb quines regles vol jugar");
         logNewLine("");
-        logNewLine("1 - Espanyol");
+        logNewLine("1 - Internacional");
         logNewLine("2 - Mexicà");
         logNewLine("3 - Colombià");
         logNewLine("");
