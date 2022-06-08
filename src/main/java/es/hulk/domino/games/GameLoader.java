@@ -1,7 +1,7 @@
 package es.hulk.domino.games;
 
-import es.hulk.domino.games.impl.InternationGame;
 import es.hulk.domino.games.impl.ColombianGame;
+import es.hulk.domino.games.impl.InternationGame;
 import es.hulk.domino.games.impl.MexicanGame;
 import es.hulk.domino.menus.MainMenu;
 import lombok.Getter;
