@@ -8,14 +8,14 @@ import es.hulk.domino.token.Card;
 
 import java.util.List;
 
-public class ColombianGame implements GameInterface {
+public class InternationGame implements GameInterface {
 
     private final ElectionMenu electionMenu = new ElectionMenu();
-    List<Card> playedCards = electionMenu.getPlayedCard();
+    private final List<Card> playedCards = electionMenu.getPlayedCard();
 
     @Override
     public void electionMenu() {
-        this.electionMenu.selectSide();
+        this.electionMenu.chooseOption();
     }
 
     @Override
