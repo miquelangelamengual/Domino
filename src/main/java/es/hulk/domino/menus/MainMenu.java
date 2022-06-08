@@ -12,32 +12,19 @@ import java.util.Scanner;
 public class MainMenu {
 
     @Getter private static String gameType;
-
     private int numPlayers;
 
     public void selectPlayers() {
-        Text.selectPlayerType();
-        int option = ErrorCatching.returnChoseInt(0,3);
-
-        if (option == 1) {
-            PlayerManager.addPlayer(new Player("CPU", true));
-            numPlayers = 1;
-            createPlayers();
-            return;
-        }
-
-        if (option == 2) {
-            System.out.println("Seleccione el numero de jugadores que van a jugar: ");
-            numPlayers = ErrorCatching.returnChoseInt(1,4);
-            createPlayers();
-        }
+        Text.selectPlayers();
+        numPlayers = ErrorCatching.returnChoseInt(1, 4);
+        createPlayers();
     }
 
     public void createPlayers() {
         for (int i = 0; i < numPlayers; i++) {
             Scanner scanner = new Scanner(System.in);
 
-            System.out.print("Selecccione el nombre del jogador: ");
+            Text.selectPlayerName();
             String name = scanner.nextLine();
 
             PlayerManager.addPlayer(new Player(name, false));

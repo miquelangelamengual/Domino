@@ -54,23 +54,67 @@ public class Text {
         System.exit(404);
     }
 
-    public void selectPlayerType() {
-        logNewLine("");
-        logNewLine("Quiere jugar contra la computadora?");
-        logNewLine("");
-        logNewLine("1 - Si");
-        logNewLine("2 - No");
-        logNewLine("");
-        log("Seleccione una de las opciones: ");
-    }
-
     public void printSideSelection(Player player) {
         logNewLine("");
-        logNewLine("Player " + player.getName() + " choose a side");
+        logNewLine("Jugador " + player.getName() + " elija una opción:");
         logNewLine("");
         logNewLine("1 - Al Principio");
         logNewLine("2 - Al Final");
         logNewLine("");
         log("Seleccione una de las opciones disponibles: ");
+    }
+
+    public void chooseElection(Player player) {
+        logNewLine("");
+        logNewLine(player.getName() + " elija una opción:");
+        logNewLine("");
+        logNewLine("1 - Poner Carta");
+        logNewLine("2 - Coger Carta");
+        logNewLine("3 - Pasar turno");
+        logNewLine("");
+        logNewLine("4 - Surtir del programa");
+        logNewLine("");
+        log("Seleccione una de las opciones: ");
+    }
+
+    public void exit() {
+        logNewLine("");
+        logNewLine("Saliendo del programa...");
+        logNewLine("");
+        System.exit(404);
+    }
+
+    public void tornLeave() {
+        logNewLine("");
+        logNewLine("Has pasado turno");
+        logNewLine("");
+    }
+
+    public void noCard() {
+        logNewLine("");
+        logNewLine("No hay mas cartas para coger!");
+        logNewLine("");
+    }
+
+    public void selectPlayers() {
+        logNewLine("");
+        logNewLine("Selecciona el numero de jugadores: ");
+        logNewLine("");
+        logNewLine("Tiene que haber un minimo de 2 jugadores y un maximo de 4");
+        logNewLine("");
+        log("Numero de jugadores: ");
+    }
+
+    public void selectPlayerName() {
+        logNewLine("");
+        logNewLine("Escribe el nombre del jugador: ");
+        logNewLine("");
+        log("Nombre del jugador: ");
+    }
+
+    public void invalidCard() {
+        logNewLine("");
+        logNewLine("La carta que has elegido no es valida!");
+        logNewLine("");
     }
 }
