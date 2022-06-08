@@ -1,6 +1,6 @@
 package es.hulk.domino.games;
 
-import es.hulk.domino.games.impl.ColombianGame;
+import es.hulk.domino.games.impl.InternationGame;
 import es.hulk.domino.games.impl.SpanishGame;
 import es.hulk.domino.games.impl.MexicanGame;
 import es.hulk.domino.menus.MainMenu;
@@ -17,7 +17,7 @@ public class GameLoader {
             setGameInterface(new SpanishGame());
             getGameInterface().electionMenu();
         } else if (MainMenu.getGameType().equals("COLOMBIAN")) {
-            setGameInterface(new ColombianGame());
+            setGameInterface(new InternationGame());
             getGameInterface().electionMenu();
         } else if (MainMenu.getGameType().equals("MEXICAN")) {
             setGameInterface(new MexicanGame());

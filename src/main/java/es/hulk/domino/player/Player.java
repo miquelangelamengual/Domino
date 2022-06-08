@@ -1,6 +1,6 @@
 package es.hulk.domino.player;
 
-import es.hulk.domino.token.Token;
+import es.hulk.domino.token.Card;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,11 +11,13 @@ public class Player {
 
     private int id;
     private String name;
-    private List<Token> cards;
-    private boolean isWinner;
+    private List<Card> hand;
 
-    public Player(String name, List<Token> cards) {
+    private boolean isWinner;
+    private boolean isCPU;
+
+    public Player(String name, boolean isCPU) {
         this.name = name;
-        this.cards = cards;
+        this.isCPU = isCPU;
     }
 }

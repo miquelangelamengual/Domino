@@ -2,14 +2,12 @@ package es.hulk.domino.menus;
 
 import es.hulk.domino.player.Player;
 import es.hulk.domino.player.PlayerManager;
-import es.hulk.domino.token.Token;
 import es.hulk.domino.utils.ErrorCatching;
 import es.hulk.domino.utils.Text;
 import lombok.Getter;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
+
 
 public class MainMenu {
 
@@ -17,8 +15,8 @@ public class MainMenu {
     private int numPlayers;
 
     public void selectPlayers() {
-        Text.log(Text.MAX_PLAYERS);
-        numPlayers = ErrorCatching.returnChoseInt(1,5);
+        Text.selectPlayers();
+        numPlayers = ErrorCatching.returnChoseInt(1, 4);
         createPlayers();
     }
 
@@ -26,10 +24,10 @@ public class MainMenu {
         for (int i = 0; i < numPlayers; i++) {
             Scanner scanner = new Scanner(System.in);
 
+            Text.selectPlayerName();
             String name = scanner.nextLine();
-            List<Token> cards = new ArrayList<>(7);
 
-            PlayerManager.addPlayer(new Player(name, cards));
+            PlayerManager.addPlayer(new Player(name, false));
         }
         printRuleSelection();
     }
