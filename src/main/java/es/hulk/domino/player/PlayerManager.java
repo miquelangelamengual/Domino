@@ -34,8 +34,8 @@ public class PlayerManager {
         List<Card> shuffledDeck = deck.getCardList();
 
         for (int i = 0; i < 7; i++) {
-            hand.add(deck.getCardList().get(i));
-            shuffledDeck.remove(i);
+            hand.add(deck.getCardList().get(0));
+            shuffledDeck.remove(0);
             Collections.shuffle(shuffledDeck);
         }
 
