@@ -6,14 +6,22 @@ import lombok.Getter;
 public class Card {
 
     private final int id;
-    private final int firstNumber;
-    private final int secondNumber;
+    private int firstNumber;
+    private int secondNumber;
 
     public Card(int firstNumber, int secondNumber) {
         this.id = getId() + 1;
         this.firstNumber = firstNumber;
         this.secondNumber = secondNumber;
     }
+
+    // Method to rotate firstNumber and secondNumber
+    public void rotate() {
+        int temp = this.firstNumber;
+        this.firstNumber = this.secondNumber;
+        this.secondNumber = temp;
+    }
+
 
     @Override
     public String toString() {
