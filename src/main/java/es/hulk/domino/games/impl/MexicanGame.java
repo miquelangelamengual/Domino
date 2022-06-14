@@ -5,7 +5,7 @@ import es.hulk.domino.games.GameInterface;
 public class MexicanGame implements GameInterface {
 
     @Override
-    public void electionMenu() {
+    public void chooseOption() {
     }
 
     @Override

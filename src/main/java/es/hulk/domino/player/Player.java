@@ -1,6 +1,7 @@
 package es.hulk.domino.player;
 
 import es.hulk.domino.token.Card;
+import es.hulk.domino.utils.Text;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -17,5 +18,15 @@ public class Player {
 
     public Player(String name) {
         this.name = name;
+    }
+
+    public void displayHand() {
+        Text.logNewLine("Tus Cartas");
+        Text.logNewLine("");
+        int count = 1;
+        for (Card card : hand) {
+            System.out.println(count + ": " +card);
+            count++;
+        }
     }
 }

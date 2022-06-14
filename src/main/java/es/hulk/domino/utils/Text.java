@@ -1,6 +1,7 @@
 package es.hulk.domino.utils;
 
 import es.hulk.domino.player.Player;
+import es.hulk.domino.token.Card;
 import lombok.experimental.UtilityClass;
 
 @UtilityClass
@@ -115,6 +116,12 @@ public class Text {
     public void invalidCard() {
         logNewLine("");
         logNewLine("La carta que has elegido no es valida!");
+        logNewLine("");
+    }
+
+    public void selectCard(String side) {
+        logNewLine("");
+        logNewLine("Elige que carta deseas poner " + side);
         logNewLine("");
     }
 }
