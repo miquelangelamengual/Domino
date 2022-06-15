@@ -9,19 +9,28 @@ import es.hulk.domino.token.Card;
 import es.hulk.domino.utils.ErrorCatching;
 import es.hulk.domino.utils.Text;
 
-public class InternationGame implements GameInterface {
+import java.util.List;
+
+public class InternationBlockGame extends Game implements GameInterface {
 
     private final Game game = Domino.getGameLoader().getGame();
 
     @Override
+    public void start() {
+        this.gameStart();
+        this.chooseOption();
+    }
+
+    @Override
     public void chooseOption() {
+        PlayerManager.classicHandAssignation(this.getDeckList());
         for (Player player : PlayerManager.getPlayerList()) {
             Text.chooseElection(player);
             int option = ErrorCatching.returnChoseInt(0, 3);
 
             switch (option) {
-                case 1 -> putCard(player);
-                case 2 -> takeCard(player);
+                case 1 -> this.game.putCard(player);
+                case 2 -> this.takeCard(player);
                 case 3 -> Text.tornLeave();
                 case 4 -> Text.exit();
             }
@@ -32,33 +41,10 @@ public class InternationGame implements GameInterface {
     public void takeCard(Player player) {
         if (player.getHand().size() > 0) {
             int option = ErrorCatching.returnChoseInt(0, player.getHand().size() - 1);
-            Card card = player.getHand().get(option);
-            game.getPlayedCard().add(card);
-            player.getHand().remove(card);
+            player.getHand().add(this.getDeckList().get(0));
+            this.getDeckList().remove(0);
         } else {
             Text.noCard();
         }
-    }
-
-    public void putCard(Player player) {
-        player.displayHand();
-        Text.printSideSelection(player);
-        int option = ErrorCatching.returnChoseInt(0, 2);
-        int cardIndex = ErrorCatching.returnParseInt() - 1;
-        Card card = player.getHand().get(cardIndex);
-
-        switch (option) {
-            case 1 -> Domino.getGameLoader().getGame().putCardLeft(player, card);
-            case 2 -> Domino.getGameLoader().getGame().putCardRight(player, card);
-        }
-
-        this.displayGame();
-
-        if (player.getHand().isEmpty()) Text.gameWon(player);
-    }
-
-    @Override
-    public void displayGame() {
-        for (Card card : game.getPlayedCard()) System.out.print(card);
     }
 }

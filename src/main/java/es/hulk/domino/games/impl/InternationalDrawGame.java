@@ -11,9 +11,8 @@ import es.hulk.domino.utils.Text;
 
 import java.util.List;
 
-public class TapaditoGame extends Game implements GameInterface {
-
-    private final Game game = Domino.getGameLoader().getGame();
+public class InternationalDrawGame extends Game implements GameInterface {
+    private final List<Card> deckList = PlayerManager.getDeck().getCardList();
 
     @Override
     public void start() {
@@ -23,7 +22,7 @@ public class TapaditoGame extends Game implements GameInterface {
 
     @Override
     public void chooseOption() {
-        PlayerManager.assignAllCardsToPlayers(this.getDeckList());
+        PlayerManager.assignAllCardsToPlayers(deckList);
         for (Player player : PlayerManager.getPlayerList()) {
             Text.chooseElection(player);
             int option = ErrorCatching.returnChoseInt(0, 3);
@@ -35,22 +34,5 @@ public class TapaditoGame extends Game implements GameInterface {
             }
         }
         this.chooseOption();
-    }
-
-    public void putCard(Player player) {
-        player.displayHiddenHand();
-        Text.printSideSelection(player);
-        int option = ErrorCatching.returnChoseInt(0, 2);
-        int cardIndex = ErrorCatching.returnParseInt() - 1;
-        Card card = player.getHand().get(cardIndex);
-
-        switch (option) {
-            case 1 -> this.game.putCardLeft(player, card);
-            case 2 -> this.game.putCardRight(player, card);
-        }
-
-        this.game.displayPlayedCards();
-
-        if (player.getHand().isEmpty()) Text.gameWon(player);
     }
 }
