@@ -23,7 +23,6 @@ public class InternationBlockGame extends Game implements GameInterface {
 
     @Override
     public void chooseOption() {
-        PlayerManager.classicHandAssignation(this.getDeckList());
         for (Player player : PlayerManager.getPlayerList()) {
             Text.chooseElection(player);
             int option = ErrorCatching.returnChoseInt(0, 3);

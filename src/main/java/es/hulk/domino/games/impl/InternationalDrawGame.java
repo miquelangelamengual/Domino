@@ -22,7 +22,6 @@ public class InternationalDrawGame extends Game implements GameInterface {
 
     @Override
     public void chooseOption() {
-        PlayerManager.assignAllCardsToPlayers(deckList);
         for (Player player : PlayerManager.getPlayerList()) {
             Text.chooseElection(player);
             int option = ErrorCatching.returnChoseInt(0, 3);
