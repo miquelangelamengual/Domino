@@ -1,5 +1,6 @@
 package es.hulk.domino;
 
+import es.hulk.domino.games.Game;
 import es.hulk.domino.games.GameLoader;
 import es.hulk.domino.menus.MainMenu;
 import lombok.Getter;
@@ -13,7 +14,7 @@ public class Domino {
         mainMenu = new MainMenu();
         gameLoader = new GameLoader();
 
-        mainMenu.selectPlayers();
+        mainMenu.printRuleSelection();
         gameLoader.load();
     }
 }

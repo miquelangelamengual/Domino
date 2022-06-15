@@ -12,34 +12,14 @@ import java.util.Scanner;
 public class MainMenu {
 
     @Getter private static String gameType;
-    private int numPlayers;
-
-    public void selectPlayers() {
-        Text.selectPlayers();
-        numPlayers = ErrorCatching.returnChoseInt(1, 4);
-        createPlayers();
-    }
-
-    public void createPlayers() {
-        for (int i = 0; i < numPlayers; i++) {
-            Scanner scanner = new Scanner(System.in);
-
-            Text.selectPlayerName();
-            String name = scanner.nextLine();
-
-            PlayerManager.addPlayer(new Player(name));
-        }
-        printRuleSelection();
-    }
-
 
     public void printRuleSelection() {
         Text.printMainMenu();
         int option = ErrorCatching.returnChoseInt(0, 3);
         switch (option) {
-            case 1 -> gameType = "INTERNATIONAL";
-            case 2 -> gameType = "COLOMBIAN";
-            case 3 -> gameType = "MEXICAN";
+            case 1 -> gameType = "INTERNATIONAL_BLOCK";
+            case 2 -> gameType = "INTERNATIONAL_DRAW";
+            case 3 -> gameType = "TAPADITO";
             default -> printRuleSelection();
         }
     }

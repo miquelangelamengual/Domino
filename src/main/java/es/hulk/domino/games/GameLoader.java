@@ -1,8 +1,8 @@
 package es.hulk.domino.games;
 
 import es.hulk.domino.games.impl.TapaditoGame;
-import es.hulk.domino.games.impl.InternationGame;
-import es.hulk.domino.games.impl.MexicanGame;
+import es.hulk.domino.games.impl.InternationBlockGame;
+import es.hulk.domino.games.impl.InternationalDrawGame;
 import es.hulk.domino.menus.MainMenu;
 import lombok.Getter;
 import lombok.Setter;
@@ -15,19 +15,18 @@ public class GameLoader {
 
     public void load() {
         this.game = new Game();
-
         switch (MainMenu.getGameType()) {
-            case "INTERNATIONAL" -> {
-                setGameInterface(new InternationGame());
-                getGameInterface().chooseOption();
+            case "INTERNATIONAL_BLOCK" -> {
+                setGameInterface(new InternationBlockGame());
+                getGameInterface().start();
             }
             case "TAPADITO" -> {
                 setGameInterface(new TapaditoGame());
-                getGameInterface().chooseOption();
+                getGameInterface().start();
             }
-            case "MEXICAN" -> {
-                setGameInterface(new MexicanGame());
-                getGameInterface().chooseOption();
+            case "INTERNATIONAL_DRAW" -> {
+                setGameInterface(new InternationalDrawGame());
+                getGameInterface().start();
             }
         }
     }
