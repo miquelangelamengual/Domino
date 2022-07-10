@@ -19,9 +19,9 @@ public class Text {
         logNewLine("");
         logNewLine(CC.RESET + "Trii amb quines regles vol jugar");
         logNewLine("");
-        logNewLine("1 - Internacional");
-        logNewLine("2 - Mexicà");
-        logNewLine("3 - Colombià");
+        logNewLine("1 - Internacional Block");
+        logNewLine("2 - Internacional Draw");
+        logNewLine("3 - Tapadito");
         logNewLine("");
         logNewLine("5 - Surtir del programa");
         logNewLine("");

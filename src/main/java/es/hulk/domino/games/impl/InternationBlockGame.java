@@ -9,6 +9,8 @@ import es.hulk.domino.token.Card;
 import es.hulk.domino.utils.ErrorCatching;
 import es.hulk.domino.utils.Text;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class InternationBlockGame extends Game implements GameInterface {
@@ -24,6 +26,7 @@ public class InternationBlockGame extends Game implements GameInterface {
     @Override
     public void chooseOption() {
         for (Player player : PlayerManager.getPlayerList()) {
+            this.assignCardsToPlayer(player);
             Text.chooseElection(player);
             int option = ErrorCatching.returnChoseInt(0, 3);
 
@@ -35,6 +38,19 @@ public class InternationBlockGame extends Game implements GameInterface {
             }
         }
         this.chooseOption();
+    }
+
+    private void assignCardsToPlayer(Player player) {
+        List<Card> hand = new ArrayList<>();
+        List<Card> shuffledDeck = game.getDeckList();
+
+        for (int i = 0; i < 7; i++) {
+            hand.add(game.getDeckList().get(0));
+            shuffledDeck.remove(0);
+            Collections.shuffle(shuffledDeck);
+        }
+
+        player.setHand(hand);
     }
 
     public void takeCard(Player player) {

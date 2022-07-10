@@ -23,6 +23,7 @@ public class TapaditoGame extends Game implements GameInterface {
 
     @Override
     public void chooseOption() {
+        this.assignAllCardsToPlayer();
         for (Player player : PlayerManager.getPlayerList()) {
             Text.chooseElection(player);
             int option = ErrorCatching.returnChoseInt(0, 3);

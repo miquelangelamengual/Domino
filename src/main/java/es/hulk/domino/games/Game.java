@@ -37,6 +37,18 @@ public class Game {
         }
     }
 
+    public void assignAllCardsToPlayer() {
+        // Give all the cards from the List deckList to all the players instead of giving only 7 cards to each player
+        for (Player player : PlayerManager.getPlayerList()) {
+            List<Card> hand = new ArrayList<>();
+            for (int i = 0; i < (deckList.size() / PlayerManager.getPlayerList().size()) ; i++) {
+                hand.add(deckList.get(0));
+                deckList.remove(0);
+            }
+            player.setHand(hand);
+        }
+    }
+
     public void putCardLeft(Player player, Card card) {
         Text.selectCard("al principio");
         if (playedCard.size() == 0) {
